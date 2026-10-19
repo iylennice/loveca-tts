@@ -1,0 +1,10 @@
+/.codex/
+/.idea/
+
+# Local game snapshots, recovery files and screenshots; never publish them.
+/.tts-backups/
+
+# Python-generated local caches.
+__pycache__/
+*.py[cod]
+/loveca-tts.iml

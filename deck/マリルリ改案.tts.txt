@@ -1,0 +1,27 @@
+# マリルリ改案
+
+# Members: 48
+PL!HS-bp1-009-P 4
+PL!HS-bp5-003-P 4
+PL!HS-bp6-011-R 2
+PL!HS-pb1-019-N 4
+PL!HS-PR-021-RM 4
+PL!N-PR-014-RM 4
+PL!HS-bp1-015-N 4
+PL!HS-bp2-014-N 2
+PL!HS-pb1-003-P+ 4
+PL!HS-pb1-011-R 3
+PL!HS-PR-006-PR 4
+PL!HS-pb1-006-R 3
+PL!N-bp1-012-R+ 1
+PL!HS-bp5-006-P 2
+PL!HS-bp1-002-RM 3
+
+# Live: 12
+PL!HS-bp6-030-L 4
+PL!HS-cl1-011-CL 2
+PL!HS-pb1-029-L 4
+PL!N-bp1-029-L 2
+
+# Energy: 12
+PL!HS-bp5-E07-LLE 12

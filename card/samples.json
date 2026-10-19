@@ -1,0 +1,85 @@
+[
+  {
+    "card_no": "PL!-bp3-021-SRL",
+    "img": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PBLL02/PL!-bp3-021-SRL.png",
+    "name": "愛してるばんざーい!",
+    "product": "プレミアムブースター ラブライブ！DUO",
+    "type": "ライブ",
+    "rare": "SRL",
+    "series": "ラブライブ！",
+    "score": 6,
+    "need_heart": {
+      "heart0": 7,
+      "heart01": 3,
+      "heart06": 4
+    },
+    "blade_heart": {
+      "b_heart06": 1
+    },
+    "special_heart": {
+      "draw": 1
+    },
+    "faq": [],
+    "rare_list": [
+      {
+        "card_no": "PL!-bp3-021-SRL",
+        "name": "愛してるばんざーい!"
+      },
+      {
+        "card_no": "PL!-bp3-021-L",
+        "name": "愛してるばんざーい!"
+      }
+    ],
+    "_img": "img/cards/PBLL02/PL!-bp3-021-SRL.png"
+  },
+  {
+    "card_no": "PL!-pb2-000-R",
+    "img": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PBLL02/PL!-pb2-000-R.png",
+    "name": "星空 凛&小泉花陽",
+    "product": "プレミアムブースター ラブライブ！DUO",
+    "type": "メンバー",
+    "rare": "R",
+    "series": "ラブライブ！",
+    "cost": 15,
+    "base_heart": {
+      "heart01": 2,
+      "heart03": 2,
+      "heart06": 1
+    },
+    "blade_heart": {
+      "b_heart03": 1
+    },
+    "blade": 7,
+    "ability": "{{jyouji.png|常時}}このカードのプレイに際し、2人のメンバーとバトンタッチしてもよい。 \n{{toujyou.png|登場}}『μ's』のメンバー2人からバトンタッチして登場した場合、自分の控え室にある『μ's』のライブカードを1枚手札に加え、さらに、そのメンバー2人のコストの合計が15の場合、ライブ終了時まで、「{{jyouji.png|常時}}ライブの合計スコアを＋１する。」を得る。",
+    "faq": [],
+    "rare_list": [
+      {
+        "card_no": "PL!-pb2-000-R",
+        "name": "星空 凛&小泉花陽"
+      },
+      {
+        "card_no": "PL!-pb2-000-DUO",
+        "name": "星空 凛&小泉花陽"
+      }
+    ],
+    "_img": "img/cards/PBLL02/PL!-pb2-000-R.png"
+  },
+  {
+    "card_no": "PL!S-PR-034-PR＋",
+    "img": "https://llofficial-cardgame.com/wordpress/wp-content/images/cardlist/PR/PL!S-PR-034-PR2.png",
+    "name": "",
+    "product": "PRカード",
+    "type": "エネルギー",
+    "rare": "PR+",
+    "series": "ラブライブ！サンシャイン!!",
+    "unit": "CYaRon！",
+    "faq": [],
+    "rare_list": [
+      {
+        "card_no": "PL!S-PR-034-PR＋",
+        "name": ""
+      }
+    ],
+    "_img": "img/cards/PR/PL!S-PR-034-PR2.png"
+  }
+]

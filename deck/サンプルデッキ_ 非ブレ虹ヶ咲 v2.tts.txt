@@ -1,0 +1,29 @@
+# サンプルデッキ: 非ブレ虹ヶ咲 v2
+# DeckLog: 1R6S3E
+
+# Members: 48
+PL!HS-bp6-001-P 4
+PL!HS-pb1-019-N 2
+PL!N-bp1-012-R+ 1
+PL!N-bp4-020-N 2
+PL!N-bp5-005-P 4
+PL!N-bp5-009-P 3
+PL!N-bp5-019-N 3
+PL!N-bp7-006-P 3
+PL!N-bp7-008-P 4
+PL!N-bp7-018-N 4
+PL!N-PR-012-RM 4
+PL!N-PR-014-RM 4
+PL!N-sd2-001-SD2 2
+PL!N-sd2-024-SD2 4
+PL!SP-bp7-018-N 4
+
+# Live: 12
+PL!N-bp1-029-L 1
+PL!N-bp3-030-L 3
+PL!N-bp7-025-L 1
+PL!N-bp7-026-L 4
+PL!N-bp1-026-SECL 3
+
+# Energy: 12
+PL!N-pb1-082-SRE 12

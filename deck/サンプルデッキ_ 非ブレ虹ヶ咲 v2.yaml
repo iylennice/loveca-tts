@@ -1,0 +1,48 @@
+player_name: "サンプルデッキ: 非ブレ虹ヶ咲 v2"
+description: 从 日版 DeckLog 导入 (1R6S3E)
+main_deck:
+  members:
+    - card_code: PL!HS-bp6-001-P
+      count: 4
+    - card_code: PL!HS-pb1-019-N
+      count: 2
+    - card_code: PL!N-bp1-012-R+
+      count: 1
+    - card_code: PL!N-bp4-020-N
+      count: 2
+    - card_code: PL!N-bp5-005-P
+      count: 4
+    - card_code: PL!N-bp5-009-P
+      count: 3
+    - card_code: PL!N-bp5-019-N
+      count: 3
+    - card_code: PL!N-bp7-006-P
+      count: 3
+    - card_code: PL!N-bp7-008-P
+      count: 4
+    - card_code: PL!N-bp7-018-N
+      count: 4
+    - card_code: PL!N-PR-012-RM
+      count: 4
+    - card_code: PL!N-PR-014-RM
+      count: 4
+    - card_code: PL!N-sd2-001-SD2
+      count: 2
+    - card_code: PL!N-sd2-024-SD2
+      count: 4
+    - card_code: PL!SP-bp7-018-N
+      count: 4
+  lives:
+    - card_code: PL!N-bp1-029-L
+      count: 1
+    - card_code: PL!N-bp3-030-L
+      count: 3
+    - card_code: PL!N-bp7-025-L
+      count: 1
+    - card_code: PL!N-bp7-026-L
+      count: 4
+    - card_code: PL!N-bp1-026-SECL
+      count: 3
+energy_deck:
+  - card_code: PL!N-pb1-082-SRE
+    count: 12
