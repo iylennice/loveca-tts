@@ -2,6 +2,8 @@
 
 [简体中文](README.md) | **English** | [日本語](README_ja.md)
 
+Now is on [steam workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3823101966)
+
 Unofficial TTS Lua helpers for the **official LoveLive! series card game (LoveCa / ラブカ)**: import decks, view card details, calculate field totals, use signed value markers, and see whether the current Live Heart requirements are met.
 
 Players still resolve skills, draw cards, pay costs, move cards, and manage turns themselves. This project does not include a complete, loadable TTS scene or a full offline card database.
