@@ -2,6 +2,8 @@
 
 **简体中文** | [English](README_en.md) | [日本語](README_ja.md)
 
+已上架[steam workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3823101966)
+
 面向 **LoveLive! 系列官方卡牌游戏（LoveCa／ラブカ）** 的非官方 TTS Lua 辅助脚本：导入牌组、查看卡牌信息、统计场面、使用正负数值标记，并实时显示 Live 的爱心条件是否满足。
 
 技能处理、抽牌、支付费用、移动卡牌和回合操作仍由玩家完成。项目不包含可直接载入的完整 TTS 场景，也不提供全量离线卡牌数据库。
