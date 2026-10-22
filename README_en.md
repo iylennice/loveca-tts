@@ -90,6 +90,10 @@ Click **Value markers**, select a player, resource, initial value, and area, the
 - Only markers in applicable areas affect totals; storage has no effect. For example, ALL belongs in cheer modifiers, not member modifiers.
 - Member/Live markers bind to the card present when placed. To change targets, move the marker to storage first, then place it in the new card's slot. Old modifiers do not transfer automatically.
 
+### Private card resolution area
+
+Use the hidden zone for your player color when an effect tells you to view and choose cards privately. Afterwards, move the cards to the hand, waiting room, or other destinations specified by that effect. Centered titles and instructions follow the selected language, omit owner or exclusive-use labels, and do not intercept card clicks or dragging.
+
 ### Turn order and language
 
 **Decide turn order** selects which seated player **chooses** to play first or second; it does not make that choice for them. The GM (Black) and spectators (Grey) are excluded. A host seated at a normal player color can participate. The result reads "[White player] decides turn order".

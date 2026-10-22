@@ -13,6 +13,7 @@ local FIELD_SLOTS = {0.780, 0.017, -0.700}
 local FIELD_LIVES = {0.695, -0.011, -0.698}
 local FIELD_CHEER = {left = 1.94, right = 2.94, top = -0.80, bottom = 0.80}
 local FIELD_SLOT_NAMES = {"左", "中", "右"}
+local FIELD_PRIVATE_ZONES = {White = "b8f30b", Pink = "d5d052"}
 
 local function fieldRegion(p)
     if p.y < -0.10 or p.y > 1.4 then return nil end
@@ -665,7 +666,32 @@ local function fieldUI()
     }
 end
 
-local function fieldOutline(mat)
+-- Text-only labels sit at the hidden area's center without intercepting cards.
+-- This area supports manual effects; it is not another statistics region.
+function lovecaPrivateAreaLabel() end
+
+local function fieldPrivateArea(mat, color)
+    local buttons = mat.getButtons() or {}
+    for i = #buttons, 1, -1 do
+        if buttons[i].click_function == "lovecaPrivateAreaLabel" then mat.removeButton(buttons[i].index) end
+    end
+    local guid = FIELD_PRIVATE_ZONES[color]
+    local zone = guid and getObjectFromGUID(guid)
+    if not zone or zone.type ~= "Fog" or zone.getData().FogColor ~= color then return end
+    local title = tr("非公開カード 処理エリア")
+    local help = tr("非公開カードを確認・選択\n処理後は効果で指定された場所へ")
+    zone.setName(title)
+    zone.setDescription(help)
+    local center = mat.positionToLocal(zone.positionToWorld({0, -0.5, 0}))
+    for _, row in ipairs({{title, -0.08, 85, {0.12, 0.18, 0.25}},
+        {help, 0.12, 40, {0.24, 0.28, 0.34}}}) do
+        mat.createButton({click_function = "lovecaPrivateAreaLabel", function_owner = Global,
+            label = row[1], position = {-center.x, center.y + 0.01, center.z + row[2]}, rotation = {0, 0, 0},
+            width = 0, height = 0, font_size = row[3], font_color = row[4]})
+    end
+end
+
+local function fieldOutline(mat, color)
     local lines = mat.getVectorLines() or {}
     -- Match the complete outline, not just its first point, to preserve unrelated lines.
     local kept = {}
@@ -691,6 +717,7 @@ local function fieldOutline(mat)
     mat.createButton({click_function = "openLovecaField", function_owner = Global, label = tr("エール"),
         position = {-2.44, 0.13, -0.90}, rotation = {0, 0, 0}, width = 0, height = 0,
         font_size = 70, font_color = {0.2, 0.45, 0.38}})
+    fieldPrivateArea(mat, color)
 end
 
 local function fieldSave()
@@ -721,7 +748,7 @@ local function fieldLoad(state)
     fieldText = {}
     for _, player in ipairs(fieldConfig.players) do
         local mat = getObjectFromGUID(player.mat)
-        if mat then fieldOutline(mat) end
+        if mat then fieldOutline(mat, player.color) end
     end
     Wait.frames(refreshLovecaField, 3)
     -- Polling also covers physics and programmatic moves that player events miss.
@@ -734,7 +761,7 @@ local function refreshFieldLanguage()
     elseif initiativeText ~= "" then initiativeText = tr("抽選待ち\nプレイヤーが未着席") end
     for _, player in ipairs(fieldConfig.players) do
         local mat = getObjectFromGUID(player.mat)
-        if mat then fieldOutline(mat) end
+        if mat then fieldOutline(mat, player.color) end
     end
 end
 
