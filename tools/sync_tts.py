@@ -85,6 +85,19 @@ def same_script(left, right):
     return left.splitlines() == right.splitlines()
 
 
+def verify_reload_state(before, after):
+    expected = json.loads(before["state"])
+    restored = json.loads(after["state"])
+    # Older releases stored a hard-coded language without a user selection.
+    # Its first migration may choose the new default; explicit choices must survive.
+    ignored = {"language", "locale_version"} if "locale_version" not in expected else set()
+    changed = [key for key, value in expected.items()
+               if key not in ignored and restored.get(key) != value]
+    if changed:
+        raise RuntimeError("Persistent state changed after reload: " + ", ".join(changed)
+                           + "; the specified save was not finalized. Load the fresh save in TTS and retry")
+
+
 def verify_saved_scene(native):
     # Only ASCII GUIDs and numeric transforms. No card text, Lua source, or
     # recursive object data is serialized in the game.
@@ -180,6 +193,12 @@ def main():
         # Never substitute the returned cached source for the built source.
         checkpoint = request({"messageID": 0})
         write_json(backup / "editor-before.json", checkpoint)
+        # Save & Play reloads the editor's loaded savePath, not an arbitrary
+        # newly saved slot. A matching object layout alone cannot detect this.
+        loaded_save = checkpoint.get("savePath")
+        if not loaded_save or Path(loaded_save).resolve() != native_file.resolve():
+            raise RuntimeError("Save & Play targets a different save. Load "
+                               + str(native_file) + " in TTS first, then retry; no reload was sent")
         write_json(backup / "installed-message.json", message)
         print(f"Recovery prepared: {backup}", flush=True)
         request(message, timeout=60)
@@ -199,6 +218,8 @@ return JSON.encode(guids)
         write_json(backup / "editor-after.json", cached)
         after = snapshot()
         write_json(backup / "after.json", after)
+        verify_saved_scene(native)
+        verify_reload_state(before, after)
         # Finalize only the user's newly created repair save. Preserve all
         # native scene data, while storing verified Global/object source text.
         finalize_save(native_file, native, source, after, states, backup)

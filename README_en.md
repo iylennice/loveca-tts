@@ -40,7 +40,7 @@ The output is [`ground/import_cards.lua`](ground/import_cards.lua). It bundles s
 
 ### 2. Install in TTS
 
-1. Open a compatible table and save the latest scene in-game first.
+1. Open a compatible table and save the latest scene in-game first. If you save to a new slot, load that new save before continuing.
 2. Open the TTS scripting editor and select **Global**.
 3. Paste the complete contents of `ground/import_cards.lua` into Global.
 4. Run **Save & Play**, check the buttons on the left and the playmat zones, then save the game again.
@@ -113,7 +113,7 @@ python tools/sync_tts.py --save-dir "$ttsSaves" --capture-only
 
 The specified directory must contain `TS_AutoSave*.json`. This backup is **not a live snapshot of the entire table** and does not replace saving in-game.
 
-Before a full sync, save the latest table in-game. Enter the filename you actually just saved; do not reuse a historical slot number:
+Before a full sync, save the latest table in-game. If you save to a new slot, load it first so Save & Play targets the same file. Enter the filename you actually just saved; do not reuse a historical slot number:
 
 ```powershell
 $saveName = Read-Host 'Enter the filename just saved, for example TS_Save_3.json'
@@ -121,7 +121,7 @@ $savedGame = Join-Path $ttsSaves $saveName
 python tools/sync_tts.py --save-dir "$ttsSaves" --reload --saved-game "$savedGame"
 ```
 
-This command backs up data, checks scene objects and transforms, runs Save & Play, and verifies the runtime script, editor cache, and specified save. If a check fails, follow its message; do not bypass the difference check to force a sync.
+This command backs up data, checks scene objects and transforms, and rejects a mismatch between the loaded save and the specified file before reloading. It then runs Save & Play and checks source, editor cache, transforms, and persistent state before updating the specified save. If a check fails, follow its message; do not bypass the difference check to force a sync.
 
 `--apply` is a **hot preview without reloading**. It does not mean the editor cache and native save are updated. Recovery materials stay in local `.tts-backups/`; save the latest game before restoring an older backup.
 
@@ -178,7 +178,7 @@ See [research notes, section 39.2](loveca-tts-research.md) for the proposal and 
 
 ## Status and references
 
-The importer, marker integration, choice draw, and Live checks through research section 38 have been deployed to the development table. The Chinese/Japanese interface in section 39 has been implemented and hot-previewed; section 41 adds English. **Full reload synchronization of the language features to that development table is still pending.** The repository build includes all three languages. See [loveca-tts-handoff.md](loveca-tts-handoff.md) for the latest handoff.
+The importer, marker integration, turn-order selection, and Live checks are deployed to the development table. **All three languages were deployed to the local native save on 2026-10-22 and verified by loading Chinese, Japanese, and English saved states.** The current language is Chinese. Research section 42 also covers save-target and persistent-state checks added to the sync tool. See [loveca-tts-handoff.md](loveca-tts-handoff.md) for the latest handoff.
 
 - [LoveCa official website](https://llofficial-cardgame.com/) and [rules](https://llofficial-cardgame.com/rule/)
 - [Official LoveCa point system](https://llofficial-cardgame.com/lovecapointsystem/)

@@ -40,7 +40,7 @@ python tools/build_importer.py
 
 ### 2. 安装到 TTS
 
-1. 打开适配的游戏桌面，先在游戏内保存最新场景。
+1. 打开适配的游戏桌面，先在游戏内保存最新场景；若另存到新槽位，先重新载入这份新存档。
 2. 打开 TTS 脚本编辑器，选择 **Global**。
 3. 将 `ground/import_cards.lua` 的完整内容放入 Global。
 4. 执行 **Save & Play**，检查左侧入口及桌垫区域，然后再次保存游戏。
@@ -113,7 +113,7 @@ python tools/sync_tts.py --save-dir "$ttsSaves" --capture-only
 
 工具要求指定目录中已有 `TS_AutoSave*.json`。这份备份**不是实时全桌场景快照**，不能代替游戏内保存。
 
-正式同步前，先在游戏内保存最新桌面，再输入这次实际保存的文件名，不要沿用历史槽号：
+正式同步前，先在游戏内保存最新桌面；若另存到新槽位，先重新载入该存档，使 Save & Play 指向同一文件。再输入这次实际保存的文件名，不要沿用历史槽号：
 
 ```powershell
 $saveName = Read-Host '输入刚保存的文件名，例如 TS_Save_3.json'
@@ -121,7 +121,7 @@ $savedGame = Join-Path $ttsSaves $saveName
 python tools/sync_tts.py --save-dir "$ttsSaves" --reload --saved-game "$savedGame"
 ```
 
-该命令会备份、核对现场物体及变换，再执行 Save & Play，并验证运行脚本、编辑器缓存和指定存档。检查失败时按提示处理，不跳过差异检查强行同步。
+该命令会备份、核对现场物体及变换，并在重载前拦截实际目标与指定存档不一致的情况；随后执行 Save & Play，验证源码、编辑器缓存、物体变换及持久状态，通过后才写回指定存档。检查失败时按提示处理，不跳过差异检查强行同步。
 
 `--apply` 是**不重载的热预览**，不代表编辑器缓存和原生存档已经更新。恢复资料保存在本地 `.tts-backups/`，恢复前仍须保存届时最新牌局。
 
@@ -178,7 +178,7 @@ python -m py_compile tools/build_importer.py tools/sync_tts.py
 
 ## 状态、资料与资源来源
 
-研究记录第 38 节的导入、标记联动、抽选和 Live 判定已在开发桌面正式部署；第 39 节中日界面已实现并完成热预览，第 41 节新增英语，**语言功能在该开发桌面的正式重载同步仍待完成**。仓库构建产物已包含三语言功能。最新交接见 [loveca-tts-handoff.md](loveca-tts-handoff.md)。
+导入、标记联动、决定先后手及 Live 判定已在开发桌面部署。**三语言功能已于 2026-10-22 正式写入本地原生存档，并完成中／日／英实际读档验证**；当前恢复中文。第 42 节同时修补了同步工具的槽位与状态核对。最新交接见 [loveca-tts-handoff.md](loveca-tts-handoff.md)。
 
 - [LoveCa 官方网站](https://llofficial-cardgame.com/)与[规则入口](https://llofficial-cardgame.com/rule/)
 - [官方构筑积分制度](https://llofficial-cardgame.com/lovecapointsystem/)
