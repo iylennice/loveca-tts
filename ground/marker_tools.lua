@@ -49,7 +49,7 @@ local function markerCompatible(scope, resource)
     if type(resource) ~= "string" or not markerDefinition(resource) then return false end
     if scope == "storage" then return true end
     if scope == "score" then return resource == "score" end
-    if scope == "member" then return resource == "blade" or string.match(resource, "^heart0[1-6]$") ~= nil end
+    if scope == "member" then return resource == "blade" or resource == "all" or string.match(resource, "^heart0[1-6]$") ~= nil end
     if scope == "live" then return resource == "score" or resource == "heart0" or string.match(resource, "^heart0[1-6]$") ~= nil end
     if scope == "cheer" then return resource ~= "blade" end
     return false

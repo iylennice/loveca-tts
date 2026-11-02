@@ -87,7 +87,7 @@ Click **Value markers**, select a player, resource, initial value, and area, the
 - Drag the icon to move it. Click the outer number: left-click `+1`, right-click `−1`.
 - The right-click menu supports entering an integer, inverting its sign, resetting to zero, and deleting the marker.
 - `M1～M3` correspond to three member slots, and `L1～L3` to three Live slots. There are also Live total score, cheer modifier, and storage areas.
-- Only markers in applicable areas affect totals; storage has no effect. For example, ALL belongs in cheer modifiers, not member modifiers.
+- Only markers in applicable areas affect totals; storage has no effect. ALL can be placed in a member slot or cheer modifiers and counts as one shared wildcard Heart for Live checks.
 - Member/Live markers bind to the card present when placed. To change targets, move the marker to storage first, then place it in the new card's slot. Old modifiers do not transfer automatically.
 
 ### Private card resolution area

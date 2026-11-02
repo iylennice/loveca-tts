@@ -33,15 +33,15 @@ local ZH_TEXT = {
     ["緑ハート"] = "绿色爱心", ["青ハート"] = "蓝色爱心", ["紫ハート"] = "紫色爱心",
     ["無色／無指定ハート"] = "无色／无指定爱心", ["ALLハート"] = "ALL 爱心",
     ["桃♥"] = "粉♥", ["赤♥"] = "红♥", ["緑♥"] = "绿♥", ["青♥"] = "蓝♥", ["無♥"] = "无♥",
-    ["ブレード"] = "光刃", ["スコア"] = "分数", ["ハート"] = "爱心",
+    ["ブレード"] = "应援棒", ["スコア"] = "分数", ["ハート"] = "爱心",
     ["無指定ハート"] = "无指定爱心", ["なし"] = "无",
     ["【常時】"] = "【常驻】", ["【登場】"] = "【登场】", ["【起動】"] = "【起动】", ["【自動】"] = "【自动】",
     ["【ライブ開始時】"] = "【Live 开始时】", ["【ライブ成功時】"] = "【Live 成功时】",
     ["【センター】"] = "【中央】", ["【左サイド】"] = "【左侧】", ["【右サイド】"] = "【右侧】",
     ["無指定×"] = "无指定×", ["無色×"] = "无色×",
-    ["種類："] = "类型：", ["コスト："] = "费用：", ["ハート："] = "爱心：", ["ブレード："] = "光刃：",
+    ["種類："] = "类型：", ["コスト："] = "费用：", ["ハート："] = "爱心：", ["ブレード："] = "应援棒：",
     ["スコア："] = "分数：", ["必要ハート："] = "所需爱心：",
-    ["コスト：—"] = "费用：—", ["ハート：—"] = "爱心：—", ["ブレード：—"] = "光刃：—",
+    ["コスト：—"] = "费用：—", ["ハート：—"] = "爱心：—", ["ブレード：—"] = "应援棒：—",
     ["ブレードハート："] = "应援爱心：", ["エール加点："] = "应援加分：", ["エールドロー："] = "应援抽牌：",
     ["ラブカポイント："] = "LoveCa 积分：", ["作品："] = "作品：", ["ユニット："] = "组合：", ["収録商品："] = "收录商品：",
     ["カード番号とレアリティが一致しません："] = "卡号与稀有度不一致：",
@@ -74,7 +74,7 @@ local ZH_TEXT = {
     ["ライブ成功（現在値）\nハート "] = "Live 成功（当前数值）\n爱心 ", [" / 必要 "] = " / 所需 ",
     ["ライブ失敗\n色不足 "] = "Live 失败\n颜色不足 ", [" / 総数不足 "] = " / 总数不足 ",
     [" ［要確認］"] = " ［待确认］", ["ステージ  "] = "舞台  ",
-    ["\nブレード "] = "\n光刃 ", ["　Active "] = "　就绪 ", [" / Wait "] = " / 休息 ",
+    ["\nブレード "] = "\n应援棒 ", ["　ブレード "] = "　应援棒 ", ["　Active "] = "　就绪 ", [" / Wait "] = " / 休息 ",
     ["ライブ  公開 "] = "Live  公开 ", [" / 裏 "] = " / 盖放 ",
     ["\n無指定 "] = "\n无指定 ", ["　スコア "] = "　分数 ", ["エール  公開 "] = "应援  公开 ",
     ["\n無色 "] = "\n无色 ", ["　加点 "] = "　加分 ", ["　ドロー "] = "　抽牌 ",
@@ -195,7 +195,7 @@ local EN_TEXT = {
     ["ライブ成功（現在値）\nハート "] = "Live successful (current values)\nHearts ", [" / 必要 "] = " / Required ",
     ["ライブ失敗\n色不足 "] = "Live failed\nColor shortfall ", [" / 総数不足 "] = " / Total shortfall ",
     [" ［要確認］"] = " [Check]", ["ステージ  "] = "Stage  ",
-    ["\nブレード "] = "\nBlade ", ["　Active "] = "  Active ", [" / Wait "] = " / Wait ",
+    ["\nブレード "] = "\nBlade ", ["　ブレード "] = "  Blade ", ["　Active "] = "  Active ", [" / Wait "] = " / Wait ",
     ["ライブ  公開 "] = "Live  Revealed ", [" / 裏 "] = " / Hidden ",
     ["\n無指定 "] = "\nUnspecified ", ["　スコア "] = "  Score ", ["エール  公開 "] = "Cheer  Revealed ",
     ["\n無色 "] = "\nColorless ", ["　加点 "] = "  Bonus ", ["　ドロー "] = "  Draw ",
@@ -461,15 +461,15 @@ local ZH_TEXT = {
     ["緑ハート"] = "绿色爱心", ["青ハート"] = "蓝色爱心", ["紫ハート"] = "紫色爱心",
     ["無色／無指定ハート"] = "无色／无指定爱心", ["ALLハート"] = "ALL 爱心",
     ["桃♥"] = "粉♥", ["赤♥"] = "红♥", ["緑♥"] = "绿♥", ["青♥"] = "蓝♥", ["無♥"] = "无♥",
-    ["ブレード"] = "光刃", ["スコア"] = "分数", ["ハート"] = "爱心",
+    ["ブレード"] = "应援棒", ["スコア"] = "分数", ["ハート"] = "爱心",
     ["無指定ハート"] = "无指定爱心", ["なし"] = "无",
     ["【常時】"] = "【常驻】", ["【登場】"] = "【登场】", ["【起動】"] = "【起动】", ["【自動】"] = "【自动】",
     ["【ライブ開始時】"] = "【Live 开始时】", ["【ライブ成功時】"] = "【Live 成功时】",
     ["【センター】"] = "【中央】", ["【左サイド】"] = "【左侧】", ["【右サイド】"] = "【右侧】",
     ["無指定×"] = "无指定×", ["無色×"] = "无色×",
-    ["種類："] = "类型：", ["コスト："] = "费用：", ["ハート："] = "爱心：", ["ブレード："] = "光刃：",
+    ["種類："] = "类型：", ["コスト："] = "费用：", ["ハート："] = "爱心：", ["ブレード："] = "应援棒：",
     ["スコア："] = "分数：", ["必要ハート："] = "所需爱心：",
-    ["コスト：—"] = "费用：—", ["ハート：—"] = "爱心：—", ["ブレード：—"] = "光刃：—",
+    ["コスト：—"] = "费用：—", ["ハート：—"] = "爱心：—", ["ブレード：—"] = "应援棒：—",
     ["ブレードハート："] = "应援爱心：", ["エール加点："] = "应援加分：", ["エールドロー："] = "应援抽牌：",
     ["ラブカポイント："] = "LoveCa 积分：", ["作品："] = "作品：", ["ユニット："] = "组合：", ["収録商品："] = "收录商品：",
     ["カード番号とレアリティが一致しません："] = "卡号与稀有度不一致：",
@@ -502,7 +502,7 @@ local ZH_TEXT = {
     ["ライブ成功（現在値）\nハート "] = "Live 成功（当前数值）\n爱心 ", [" / 必要 "] = " / 所需 ",
     ["ライブ失敗\n色不足 "] = "Live 失败\n颜色不足 ", [" / 総数不足 "] = " / 总数不足 ",
     [" ［要確認］"] = " ［待确认］", ["ステージ  "] = "舞台  ",
-    ["\nブレード "] = "\n光刃 ", ["　Active "] = "　就绪 ", [" / Wait "] = " / 休息 ",
+    ["\nブレード "] = "\n应援棒 ", ["　ブレード "] = "　应援棒 ", ["　Active "] = "　就绪 ", [" / Wait "] = " / 休息 ",
     ["ライブ  公開 "] = "Live  公开 ", [" / 裏 "] = " / 盖放 ",
     ["\n無指定 "] = "\n无指定 ", ["　スコア "] = "　分数 ", ["エール  公開 "] = "应援  公开 ",
     ["\n無色 "] = "\n无色 ", ["　加点 "] = "　加分 ", ["　ドロー "] = "　抽牌 ",
@@ -623,7 +623,7 @@ local EN_TEXT = {
     ["ライブ成功（現在値）\nハート "] = "Live successful (current values)\nHearts ", [" / 必要 "] = " / Required ",
     ["ライブ失敗\n色不足 "] = "Live failed\nColor shortfall ", [" / 総数不足 "] = " / Total shortfall ",
     [" ［要確認］"] = " [Check]", ["ステージ  "] = "Stage  ",
-    ["\nブレード "] = "\nBlade ", ["　Active "] = "  Active ", [" / Wait "] = " / Wait ",
+    ["\nブレード "] = "\nBlade ", ["　ブレード "] = "  Blade ", ["　Active "] = "  Active ", [" / Wait "] = " / Wait ",
     ["ライブ  公開 "] = "Live  Revealed ", [" / 裏 "] = " / Hidden ",
     ["\n無指定 "] = "\nUnspecified ", ["　スコア "] = "  Score ", ["エール  公開 "] = "Cheer  Revealed ",
     ["\n無色 "] = "\nColorless ", ["　加点 "] = "  Bonus ", ["　ドロー "] = "  Draw ",
@@ -1246,7 +1246,7 @@ local function fieldSheet(player)
         modifiers = {member = {{}, {}, {}}, live = {{}, {}, {}}, cheer = {}, score = {}, count = 0},
         complete = {stage = true, live = true, cheer = true, energy = true},
         judgement = {status = "pending", message = tr("未判定\n集計中")},
-        stage = {hearts = {}, blade = 0, count = 0, active = 0, wait = 0, slots = {}},
+        stage = {hearts = {}, all = 0, blade = 0, count = 0, active = 0, wait = 0, slots = {}},
         live = {hearts = {}, score = 0, count = 0, hidden = 0, slots = {}},
         cheer = {hearts = {}, score = 0, draw = 0, count = 0, hidden = 0},
         energy = {active = 0, wait = 0, unknown = 0, total = 0}}
@@ -1353,6 +1353,8 @@ local function fieldApplyMarkers(sheet)
         if not modifiers.invalid then
             local effective = {hearts = fieldModifiedHearts(sheet, "stage", card.hearts, modifiers, FIELD_HEART_KEYS),
                 blade = fieldAdjusted(sheet, "stage", card.blade, modifiers.blade or 0)}
+            effective.all = fieldAdjusted(sheet, "stage", 0, modifiers.all or 0)
+            sheet.stage.all = fieldAdjusted(sheet, "stage", sheet.stage.all, effective.all)
             for _, key in ipairs(FIELD_HEART_KEYS) do
                 sheet.stage.hearts[key] = fieldAdjusted(sheet, "stage", sheet.stage.hearts[key] or 0, modifiers[key] or 0)
             end
@@ -1432,10 +1434,11 @@ local function fieldJudgeLive(sheet)
             if value < 0 then return pending(tr("負の必要ハートを確認")) end
         end
     end
-    local all = sheet.cheer.hearts.b_all or 0
+    local all = fieldExactSum(sheet.stage.all, sheet.cheer.hearts.b_all or 0)
     local neutral = fieldExactSum(sheet.stage.hearts.heart0 or 0, sheet.cheer.hearts.b_heart07 or 0)
     local neutralNeed = sheet.live.hearts.heart0 or 0
     if not neutral then return pending(tr("ハート合計が整数範囲外")) end
+    if not all then return pending(tr("ハート合計が整数範囲外")) end
     if all < 0 or neutral < 0 then return pending(tr("負の所有ハートを確認")) end
     local availableTotal, requiredTotal = fieldExactSum(all, neutral), neutralNeed
     if not availableTotal then return pending(tr("ハート合計が整数範囲外")) end
@@ -1479,7 +1482,7 @@ local function fieldRender(sheet)
         return text .. (sheet.complete[section] and "" or tr(" ［要確認］"))
     end
     fieldSetText(prefix .. "stage", title("stage", tr("ステージ  ") .. sheet.stage.count .. tr(" 人")) .. "\n"
-        .. fieldHeartRows(sheet.stage.hearts, "heart") .. tr("\nブレード ") .. sheet.stage.blade
+        .. fieldHeartRows(sheet.stage.hearts, "heart") .. "\nALL " .. sheet.stage.all .. tr("　ブレード ") .. sheet.stage.blade
         .. tr("　Active ") .. sheet.stage.active .. tr(" / Wait ") .. sheet.stage.wait)
     fieldSetText(prefix .. "live", title("live", tr("ライブ  公開 ") .. sheet.live.count .. tr(" / 裏 ") .. sheet.live.hidden)
         .. "\n" .. fieldHeartRows(sheet.live.hearts, "heart")
@@ -1988,7 +1991,7 @@ local function markerCompatible(scope, resource)
     if type(resource) ~= "string" or not markerDefinition(resource) then return false end
     if scope == "storage" then return true end
     if scope == "score" then return resource == "score" end
-    if scope == "member" then return resource == "blade" or string.match(resource, "^heart0[1-6]$") ~= nil end
+    if scope == "member" then return resource == "blade" or resource == "all" or string.match(resource, "^heart0[1-6]$") ~= nil end
     if scope == "live" then return resource == "score" or resource == "heart0" or string.match(resource, "^heart0[1-6]$") ~= nil end
     if scope == "cheer" then return resource ~= "blade" end
     return false

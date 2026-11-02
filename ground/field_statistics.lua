@@ -89,7 +89,7 @@ local function fieldSheet(player)
         modifiers = {member = {{}, {}, {}}, live = {{}, {}, {}}, cheer = {}, score = {}, count = 0},
         complete = {stage = true, live = true, cheer = true, energy = true},
         judgement = {status = "pending", message = tr("未判定\n集計中")},
-        stage = {hearts = {}, blade = 0, count = 0, active = 0, wait = 0, slots = {}},
+        stage = {hearts = {}, all = 0, blade = 0, count = 0, active = 0, wait = 0, slots = {}},
         live = {hearts = {}, score = 0, count = 0, hidden = 0, slots = {}},
         cheer = {hearts = {}, score = 0, draw = 0, count = 0, hidden = 0},
         energy = {active = 0, wait = 0, unknown = 0, total = 0}}
@@ -196,6 +196,8 @@ local function fieldApplyMarkers(sheet)
         if not modifiers.invalid then
             local effective = {hearts = fieldModifiedHearts(sheet, "stage", card.hearts, modifiers, FIELD_HEART_KEYS),
                 blade = fieldAdjusted(sheet, "stage", card.blade, modifiers.blade or 0)}
+            effective.all = fieldAdjusted(sheet, "stage", 0, modifiers.all or 0)
+            sheet.stage.all = fieldAdjusted(sheet, "stage", sheet.stage.all, effective.all)
             for _, key in ipairs(FIELD_HEART_KEYS) do
                 sheet.stage.hearts[key] = fieldAdjusted(sheet, "stage", sheet.stage.hearts[key] or 0, modifiers[key] or 0)
             end
@@ -275,10 +277,11 @@ local function fieldJudgeLive(sheet)
             if value < 0 then return pending(tr("負の必要ハートを確認")) end
         end
     end
-    local all = sheet.cheer.hearts.b_all or 0
+    local all = fieldExactSum(sheet.stage.all, sheet.cheer.hearts.b_all or 0)
     local neutral = fieldExactSum(sheet.stage.hearts.heart0 or 0, sheet.cheer.hearts.b_heart07 or 0)
     local neutralNeed = sheet.live.hearts.heart0 or 0
     if not neutral then return pending(tr("ハート合計が整数範囲外")) end
+    if not all then return pending(tr("ハート合計が整数範囲外")) end
     if all < 0 or neutral < 0 then return pending(tr("負の所有ハートを確認")) end
     local availableTotal, requiredTotal = fieldExactSum(all, neutral), neutralNeed
     if not availableTotal then return pending(tr("ハート合計が整数範囲外")) end
@@ -322,7 +325,7 @@ local function fieldRender(sheet)
         return text .. (sheet.complete[section] and "" or tr(" ［要確認］"))
     end
     fieldSetText(prefix .. "stage", title("stage", tr("ステージ  ") .. sheet.stage.count .. tr(" 人")) .. "\n"
-        .. fieldHeartRows(sheet.stage.hearts, "heart") .. tr("\nブレード ") .. sheet.stage.blade
+        .. fieldHeartRows(sheet.stage.hearts, "heart") .. "\nALL " .. sheet.stage.all .. tr("　ブレード ") .. sheet.stage.blade
         .. tr("　Active ") .. sheet.stage.active .. tr(" / Wait ") .. sheet.stage.wait)
     fieldSetText(prefix .. "live", title("live", tr("ライブ  公開 ") .. sheet.live.count .. tr(" / 裏 ") .. sheet.live.hidden)
         .. "\n" .. fieldHeartRows(sheet.live.hearts, "heart")
